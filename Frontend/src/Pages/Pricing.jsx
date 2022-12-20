@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Stack,
@@ -52,6 +52,10 @@ function PriceWrapper({ children }) {
 
 export default function Pricing() {
   
+  const [state,setState] = useState(true)
+
+  
+  console.log(state)
   return (
   
     <Box >
@@ -70,10 +74,11 @@ export default function Pricing() {
         <Text fontSize="lg" color={'gray.500'}>
         MONTHLY  
         </Text><Stack direction='row'>
-  <Switch colorScheme='teal' size='lg' />
+  <Switch colorScheme='teal' size='lg' onChange={()=>setState(!state)} />
 </Stack>
     <Text>YEARLY</Text>
       </HStack>
+      {state?(
       <Stack
         direction={{ base: 'column', md: 'row' }}
         textAlign="center"
@@ -102,7 +107,7 @@ export default function Pricing() {
             <Box w={"220px"} h={'2px'} bg={'green.600'}></Box>
           </Box>
           <VStack
-            bg={useColorModeValue('gray.50', 'gray.700')}
+            // bg="gray"
             py={4}
             borderBottomRadius={'xl'} >
             <List spacing={3} textAlign="start" px={12} w={"350px"}>
@@ -175,7 +180,7 @@ export default function Pricing() {
             <Box w={"220px"} h={'2px'} bg={'green.600'}></Box>
           </Box>
           <VStack
-            bg={useColorModeValue('gray.50', 'gray.700')}
+            // bg="gray"
             py={4}
             borderBottomRadius={'xl'} >
             <List spacing={3} textAlign="start" px={12} w={"350px"}>
@@ -244,7 +249,7 @@ export default function Pricing() {
             <Box w={"220px"} h={'2px'} bg={'green.600'}></Box>
           </Box>
           <VStack
-            bg={useColorModeValue('gray.50', 'gray.700')}
+            // bg={('gray.50', 'gray.700')}
             py={4}
             borderBottomRadius={'xl'} >
             <List spacing={3} textAlign="start" px={12} w={"350px"}>
@@ -293,7 +298,237 @@ export default function Pricing() {
             </Box>
           </VStack>
         </PriceWrapper>
-      </Stack>
+      </Stack>):(<Stack      ////////////////////////////////////////////////////2nd//////////////////////////////
+        direction={{ base: 'column', md: 'row' }}
+        textAlign="center"
+        justify="center"
+        spacing={{ base: 4, lg: 10 }}
+        py={10}>
+
+
+         <PriceWrapper >
+          <Box py={2} px={12}  textAlign={"left"}>
+            <Text fontWeight="500" fontSize="1.5rem" >
+            Starter
+            </Text>
+            <Text w={"200px"} fontSize="12px">Ideal for freelancers and contractors just starting out.</Text>
+            <HStack >
+              <Text fontSize="3xl" fontWeight="600"  >
+                $
+              </Text>
+              <Text fontSize="5xl" fontWeight="900"   >
+                17
+              </Text>
+              <Text fontSize="3xl" color="gray.500"   >
+                /month
+              </Text>
+              
+              
+            </HStack>
+            <Flex marginLeft="135px" marginBottom="0px">
+              <p >Billed yearly</p>
+           </Flex>
+            <Box w={"220px"} h={'2px'} bg={'green.600'}></Box>
+          </Box>
+          <VStack
+            // bg="gray"
+            py={4}
+            borderBottomRadius={'xl'} >
+            <List spacing={3} textAlign="start" px={12} w={"350px"}>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                All Templates
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Unlimited Clients & Projects
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Invoicing & Payments
+              </ListItem>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Proposals & Contracts
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Tasks & Time Tracking
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Client CRM
+              </ListItem>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Expense Tracking
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Up to 5 Project Collaborators
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Unlimited Project Collaborators
+              </ListItem>
+              
+            </List>
+            <Box w="80%" pt={7} paddingTop={"82px"} >
+              <Button w="full" color={'#fff'} variant="outline" bg={"#00B289"} >
+                Start trial
+              </Button>
+            </Box>
+          </VStack>
+        </PriceWrapper>
+
+        <PriceWrapper>
+         {/* < LogoWrapper >
+        <p> MOST POPULAR</p>
+         </LogoWrapper> */}
+          <Box py={2} px={12}  textAlign={"left"}>
+            <Text fontWeight="500" fontSize="1.5rem" >
+            Professional
+            </Text>
+            <Text w={"200px"} fontSize="12px">Everything a growing independent business needs to thrive.</Text>
+            <HStack >
+              <Text fontSize="3xl" fontWeight="600"  >
+                $
+              </Text>
+              <Text fontSize="5xl" fontWeight="900"   >
+                32
+              </Text>
+              <Text fontSize="3xl" color="gray.500"   >
+                /month
+              </Text>
+            </HStack>
+            <Flex marginLeft="135px" marginBottom="0px">
+              <p >Billed yearly</p>
+           </Flex>
+            <Box w={"220px"} h={'2px'} bg={'green.600'}></Box>
+          </Box>
+          <VStack
+            // bg="gray"
+            py={4}
+            borderBottomRadius={'xl'} >
+            <List spacing={3} textAlign="start" px={12} w={"350px"}>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Everything in Starter plus...
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Custom Branding
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Forms & Questionnaires
+              </ListItem>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Workflow Automations
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Client Portal
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                QuickBooks Integration
+              </ListItem>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Calendly Integration
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Zapier Integration
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Up to 15 Project Collaborators
+              </ListItem>
+              
+            </List>
+            <Box w="80%" pt={7} paddingTop={"82px"} >
+              <Button  w="full" color={'#fff'} variant="outline" bg={"#00B289"}>
+                Start trial
+              </Button>
+            </Box>
+          </VStack>
+        </PriceWrapper>
+        <PriceWrapper>
+          <Box py={2} px={12}  textAlign={"left"}>
+            <Text fontWeight="500" fontSize="1.5rem" >
+            Business
+            </Text>
+            <Text w={"200px"} fontSize="12px">The perfect package for small businesses and agencies.</Text>
+            <HStack >
+              <Text fontSize="3xl" fontWeight="600"  >
+                $
+              </Text>
+              <Text fontSize="5xl" fontWeight="900"   >
+                52
+              </Text>
+              <Text fontSize="3xl" color="gray.500"   >
+                /month
+              </Text>
+            </HStack>
+            <Flex marginLeft="135px" marginBottom="0px">
+              <p >Billed yearly</p>
+           </Flex>
+            <Box w={"220px"} h={'2px'} bg={'green.600'}></Box>
+          </Box>
+          <VStack
+            // bg={('gray.50', 'gray.700')}
+            py={4}
+            borderBottomRadius={'xl'} >
+            <List spacing={3} textAlign="start" px={12} w={"350px"}>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Everything in Starter and Professional plus...
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Hiring Agreement Templates (1099 contracts)
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Subcontractor Onboarding
+              </ListItem>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Talent Pool
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                3 Team Seats (additional seats $9/month)
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Accountant Access
+              </ListItem>
+              <ListItem >
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Connect Multiple Bank Accounts
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Unlimited Subcontractors
+              </ListItem>
+              {/* <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Unlimited Project Collaborators
+              </ListItem> */}
+              
+            </List>
+            <Box w="80%" pt={7}  paddingTop={"45px"} >
+              <Button w="full" color={'#fff'} variant="outline" bg={"#00B289"} >
+                Start trial
+              </Button>
+            </Box>
+          </VStack>
+        </PriceWrapper>
+      </Stack>)}
       </Box>       
      
     </Box>
