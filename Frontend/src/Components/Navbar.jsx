@@ -189,6 +189,7 @@ export const Navbar = () => {
           <Spacer display={{ md: "none" }} />
           <Spacer display={{ md: "none" }} />
           <Box m="auto" display={{ base: "none", md: "flex" }}>
+          <RouterLink to="/">
             <Image
               p="5%"
               mb="7%"
@@ -196,6 +197,7 @@ export const Navbar = () => {
               src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg"
               alt="Logo"
             />
+            </RouterLink>
           </Box>
           <Flex
             m="auto"
