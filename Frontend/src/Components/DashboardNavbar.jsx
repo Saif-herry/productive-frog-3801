@@ -18,7 +18,8 @@ import { logoutAPI } from "../Redux/Auth/auth.action";
 
 const DashboardNavbar = () => {
   const userData = JSON.parse(localStorage.getItem("userData"));
-  let username = userData.fullname.split(" ")[0];
+  // let username = userData.fullname.split(" ")[0];
+  let username = userData
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

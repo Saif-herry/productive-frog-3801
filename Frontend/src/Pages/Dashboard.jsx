@@ -31,7 +31,10 @@ import { DashSidebar } from "../Components/DashSidebar";
 
 const Dashboard = () => {
   const userData = JSON.parse(localStorage.getItem("userData"));
-  let username = userData.fullname.split(" ")[0];
+  // console.log(username,'before')
+  // let username = userData.fullname.split(" ")[0];
+  let username = userData
+  console.log(username,"afterrr")
 
   const getDate = () => {
     let today = new Date();
@@ -114,7 +117,7 @@ const Dashboard = () => {
                   w="50%"
                 >
                   <Flex gap="3">
-                    <Image src="https://app.hellobonsai.com/packs/static/good-morning-66f0f5841376d77563ac.svg"></Image>
+                    {/* <Image src="https://app.hellobonsai.com/packs/static/good-morning-66f0f5841376d77563ac.svg"></Image> */}
                     <Box>
                       <p style={{ color: "gray" }}>{getDate()}</p>
                       <Heading>
@@ -250,9 +253,9 @@ const Dashboard = () => {
                         Connect a US, UK or Canadian bank account to
                         automatically import expenses.
                       </Center>
-                      <Center fontSize="12" color="gray">
+                      {/* <Center fontSize="12" color="gray">
                         ADD BANK ACCOUNT
-                      </Center>
+                      </Center> */}
                     </Box>
                   </Box>
                   <Box
@@ -431,13 +434,35 @@ const Dashboard = () => {
                             <MinusIcon mt="3"></MinusIcon>
                             <Box>
                               <Text ml="5" mt="2">
-                                Akshay Kanherkar Created Project Express
+                                Mohammad Saif Created Project Express
                               </Text>
-                              <p style={{ marginLeft: 20 }}>25 Aug 2022</p>
+                              <p style={{ marginLeft: 20 }}>2 Nov 2022</p>
                             </Box>
                           </Flex>
                         </Box>
                         <Box h="70">
+                          <Flex>
+                            <MinusIcon mt="3"></MinusIcon>
+                            <Box>
+                              <Text ml="5" mt="2">
+                                Mohammad Saif Created Project Express
+                              </Text>
+                              <p style={{ marginLeft: 20 }}>15 Nov 2022</p>
+                            </Box>
+                          </Flex>
+                        </Box>
+                        <Box h="70">
+                          <Flex>
+                            <MinusIcon mt="3"></MinusIcon>
+                            <Box>
+                              <Text ml="5" mt="2">
+                                Mohammad Saif Created Project Express
+                              </Text>
+                              <p style={{ marginLeft: 20 }}>25 Dec 2022</p>
+                            </Box>
+                          </Flex>
+                        </Box>
+                        {/* <Box h="70">
                           <Flex>
                             <MinusIcon mt="3"></MinusIcon>
                             <Box>
@@ -447,29 +472,7 @@ const Dashboard = () => {
                               <p style={{ marginLeft: 20 }}>25 Aug 2022</p>
                             </Box>
                           </Flex>
-                        </Box>
-                        <Box h="70">
-                          <Flex>
-                            <MinusIcon mt="3"></MinusIcon>
-                            <Box>
-                              <Text ml="5" mt="2">
-                                Akshay Kanherkar Created Project Express
-                              </Text>
-                              <p style={{ marginLeft: 20 }}>25 Aug 2022</p>
-                            </Box>
-                          </Flex>
-                        </Box>
-                        <Box h="70">
-                          <Flex>
-                            <MinusIcon mt="3"></MinusIcon>
-                            <Box>
-                              <Text ml="5" mt="2">
-                                Akshay Kanherkar Created Project Express
-                              </Text>
-                              <p style={{ marginLeft: 20 }}>25 Aug 2022</p>
-                            </Box>
-                          </Flex>
-                        </Box>
+                        </Box> */}
                       </Grid>
                     </Box>
                   </Grid>
