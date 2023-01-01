@@ -31,7 +31,6 @@ import { DashSidebar } from "../Components/DashSidebar";
 
 const Dashboard = () => {
   const userData = JSON.parse(localStorage.getItem("userData"));
-  // console.log(username,'before')
   // let username = userData.fullname.split(" ")[0];
   let username = userData
   console.log(username,"afterrr")
