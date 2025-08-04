@@ -192,13 +192,13 @@ export default function SimpleCard() {
               </Button>
             </Stack>
           </Stack>
-          <Box align={"center"} justify={"center"}>
+          <Box align={"center"} justify={"center"} >
             <Box className="line2"></Box>
 
             <Link marginTop="100px" color={"#00B289"}>
               Reset password?
             </Link>
-            <Link marginTop="100px" color={"blue"} onClick={handleSignup}>
+            <Link marginTop="100px" color={"#00B289"} onClick={handleSignup}>
               SignUp
             </Link>
 

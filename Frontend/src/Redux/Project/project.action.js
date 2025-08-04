@@ -4,7 +4,7 @@ import * as types from "./project.actionTypes";
 export const getProjectAPI = (token) => (dispatch) => {
   dispatch({ type: types.GET_PROJECT_LOADING });
   return axios
-    .get("https://determined-gaiters-deer.cyclic.app/project", {
+    .get("https://bonsai-backend-2czf.onrender.com/project", {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -17,9 +17,9 @@ export const getProjectAPI = (token) => (dispatch) => {
     });
 };
 
-export const createProjectAPI = (project,token) => (dispatch) => {
+export const createProjectAPI = (project, token) => (dispatch) => {
   return axios.post(
-    "https://determined-gaiters-deer.cyclic.app/project",
+    "https://bonsai-backend-2czf.onrender.com/project",
     project,
     {
       headers: {
@@ -31,7 +31,7 @@ export const createProjectAPI = (project,token) => (dispatch) => {
 
 export const updateProjectAPI = (id, updated_project, token) => (dispatch) => {
   return axios.patch(
-    `https://determined-gaiters-deer.cyclic.app/project/${id}`,
+    `https://bonsai-backend-2czf.onrender.com/project/${id}`,
     updated_project,
     {
       headers: {
@@ -43,7 +43,7 @@ export const updateProjectAPI = (id, updated_project, token) => (dispatch) => {
 
 export const deleteProjectAPI = (id, token) => (dispatch) => {
   return axios.delete(
-    `https://determined-gaiters-deer.cyclic.app/project/${id}`,
+    `https://bonsai-backend-2czf.onrender.com/project/${id}`,
     {
       headers: {
         Authorization: "Bearer " + token,
