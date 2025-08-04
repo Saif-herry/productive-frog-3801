@@ -43,7 +43,7 @@ UserController.post("/login", async (req, res) => {
     if (result) {
       const token = jwt.sign(
         { email: user.email, userId: user._id },
-        process.env.jwt_secret_key
+        process.env.JWT_SECRET
       );
       return res.status(200).send({ message: "Login Success", token: token });
     } else {

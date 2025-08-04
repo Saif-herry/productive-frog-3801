@@ -8,7 +8,7 @@ const Authentication = async (req, res, next) => {
     return res.status(511).send("Authentication Failed,Please Login");
   }
 
-  await jwt.verify(user_token, process.env.jwt_secret_key, (err, decoded) => {
+  await jwt.verify(user_token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
       return res.status(511).send("Authentication Failed,Please Login");
     }
